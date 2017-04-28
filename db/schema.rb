@@ -10,7 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170428184324) do
+ActiveRecord::Schema.define(version: 20170428205404) do
+
+  create_table "country_weights", force: :cascade do |t|
+    t.string  "country"
+    t.decimal "amount",  precision: 4, scale: 2
+    t.integer "etf_id"
+    t.index ["etf_id"], name: "index_country_weights_on_etf_id"
+  end
+
+  create_table "etfs", force: :cascade do |t|
+    t.string   "ticker"
+    t.string   "name"
+    t.text     "objective"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sector_allocations", force: :cascade do |t|
+    t.string  "sector"
+    t.decimal "amount", precision: 4, scale: 2
+    t.integer "etf_id"
+    t.index ["etf_id"], name: "index_sector_allocations_on_etf_id"
+  end
+
+  create_table "top_holdings", force: :cascade do |t|
+    t.string  "name"
+    t.decimal "amount", precision: 4, scale: 2
+    t.integer "etf_id"
+    t.index ["etf_id"], name: "index_top_holdings_on_etf_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -25,6 +54,7 @@ ActiveRecord::Schema.define(version: 20170428184324) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "first_name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
