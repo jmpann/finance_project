@@ -38,7 +38,8 @@ gem 'jbuilder', '~> 2.5'
 
 #library for webscraping
 gem 'nokogiri'
-
+#allow http request redirections
+gem 'mechanize'
 #library to manage user login and authentication
 gem 'devise'
 
