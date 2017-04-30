@@ -9,7 +9,7 @@ class EtfsController < ApplicationController
       path =
       render :js => "window.location = '#{etf_path(@etf)}'"
     else
-      
+
     end
   end
 
@@ -18,6 +18,11 @@ class EtfsController < ApplicationController
     @top_holdings = @etf.top_holdings
     @country_weights = @etf.country_weights
     @sector_allocations = @etf.sector_allocations
+
+    respond_to do |format|
+      format.html
+      format.csv { send_data , filename: ".csv" }
+    end
   end
 
 end

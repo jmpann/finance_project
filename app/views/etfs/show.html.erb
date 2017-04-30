@@ -21,14 +21,14 @@
             <% @top_holdings.each do |holding| %>
             <tr>
               <td><%= holding.name %></td>
-              <td><%= holding.shares %></td>
+              <td><%= holding.amount %></td>
             </tr>
             <% end %>
           </tbody>
         </table>
       </div>
       <div class="col-md-6">
-        <%= bar_chart (Hash[@top_holdings.map {|top_holding| [top_holding.name, top_holding.shares]}]), id: "top-holdings-chart",'title': 'Top 10 Holdings', 'height': '368px', chartArea: {left:500,top:0,width:'100%',height:'100%'}%>
+        <%= bar_chart (Hash[@top_holdings.map {|top_holding| [top_holding.name, top_holding.amount]}]), id: "top-holdings-chart",'title': 'Top 10 Holdings', 'height': '368px', chartArea: {left:500,top:0,width:'100%',height:'100%'}%>
       </div>
     </div>
   <% end %>
