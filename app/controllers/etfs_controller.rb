@@ -5,6 +5,11 @@ class EtfsController < ApplicationController
       @etf = Etf.find_by_ticker(params[:etf])
       @etf ||= Scraper.new_from_lookup(params[:etf])
     end
+    if @etf.present?
+      redirect_to @etf
+    else
+      puts "ETF was not found."
+    end
   end
 
   def show
