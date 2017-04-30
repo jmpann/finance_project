@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   root 'welcome#index'
   get 'my_etfs', to: 'users#my_etfs'
   get 'search_etfs', to: 'etfs#search'
+  get '/etfs/:id', to: 'etfs#show', as: 'etf'
 end

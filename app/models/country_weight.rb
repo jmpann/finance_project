@@ -6,8 +6,8 @@ class CountryWeight < ApplicationRecord
     country_allocation_table_rows = country_html_fragment.css('tr')
     country_allocation_table_rows.each do |row|
       country_name = row.css('.label').text
-      country_amount = row.css('.data').text
-      CountryWeight.create(country: country_name, amount: country_amount, etf_id: etf_id)
+      country_amount = row.css('.data').text.to_f
+      CountryWeight.create(name: country_name, amount: country_amount, etf_id: etf_id)
     end
   end
 end

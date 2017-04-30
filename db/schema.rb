@@ -13,8 +13,8 @@
 ActiveRecord::Schema.define(version: 20170428205404) do
 
   create_table "country_weights", force: :cascade do |t|
-    t.string  "country"
-    t.string  "amount"
+    t.string  "name"
+    t.float   "amount"
     t.integer "etf_id"
     t.index ["etf_id"], name: "index_country_weights_on_etf_id"
   end
@@ -28,15 +28,15 @@ ActiveRecord::Schema.define(version: 20170428205404) do
   end
 
   create_table "sector_allocations", force: :cascade do |t|
-    t.string  "sector"
-    t.string  "amount"
+    t.string  "name"
+    t.float   "amount"
     t.integer "etf_id"
     t.index ["etf_id"], name: "index_sector_allocations_on_etf_id"
   end
 
   create_table "top_holdings", force: :cascade do |t|
     t.string  "name"
-    t.string  "amount"
+    t.float   "amount"
     t.integer "etf_id"
     t.index ["etf_id"], name: "index_top_holdings_on_etf_id"
   end
