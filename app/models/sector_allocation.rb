@@ -6,9 +6,9 @@ class SectorAllocation < ApplicationRecord
     xml_page = Nokogiri::XML(sectors_html_fragment)
     sector_allocation_table_rows = xml_page.css('attribute')
     sector_allocation_table_rows.each do |row|
-      sector_amount = row.css('value').text
+      sector_amount = row.css('value').text.to_f
       sector_name = row.css('label').text
-      SectorAllocation.create(sector: sector_name, amount: sector_amount, etf_id: etf_id)
+      SectorAllocation.create(name: sector_name, amount: sector_amount, etf_id: etf_id)
     end
   end
 end

@@ -5,13 +5,18 @@ class EtfsController < ApplicationController
       @etf = Etf.find_by_ticker(params[:etf])
       @etf ||= Scraper.new_from_lookup(params[:etf])
     end
-    
-    # if @etf
-    #   #render json: @stock
-    #   render partial: 'etf/lookup'
-    # else
-    #   render status: :not_found, nothing: true
-    # end
+    if @etf.present?
+      redirect_to @etf
+    else
+      puts "ETF was not found."
+    end
+  end
+
+  def show
+    @etf = Etf.find(params[:id])
+    @top_holdings = @etf.top_holdings
+    @country_weights = @etf.country_weights
+    @sector_allocations = @etf.sector_allocations
   end
 
 end
