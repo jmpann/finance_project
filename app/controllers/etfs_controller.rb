@@ -6,9 +6,10 @@ class EtfsController < ApplicationController
       @etf ||= Scraper.new_from_lookup(params[:etf])
     end
     if @etf.present?
-      redirect_to @etf
+      path =
+      render :js => "window.location = '#{etf_path(@etf)}'"
     else
-      puts "ETF was not found."
+      
     end
   end
 
