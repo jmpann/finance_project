@@ -1,4 +1,4 @@
-class ToCsv > ApplicationRecord
+class ToCsv < ApplicationRecord
 
   def self.create_csv_file
     # attributes = %w{Holding Amount}
