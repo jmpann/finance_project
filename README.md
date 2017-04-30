@@ -1,24 +1,4 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project scrapes SPDR ETFs data from State Street Advisors. Upon querying a valid ETF ticker symbol, user will be redirected to the ETF's show page displaying its Top 10 Holdings, Sector Allocation, and Country Weights. This data will be displayed in table and chart form.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
