@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20170428205404) do
 
   create_table "top_holdings", force: :cascade do |t|
     t.string  "name"
-    t.integer "shares"
+    t.integer "amount"
     t.integer "etf_id"
     t.index ["etf_id"], name: "index_top_holdings_on_etf_id"
   end
