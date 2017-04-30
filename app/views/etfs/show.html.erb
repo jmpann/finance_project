@@ -84,7 +84,7 @@
         </table>
       </div>
       <div class="col-md-6">
-        <%= pie_chart (Hash[@country_weights.map {|country_weight| [country_weight.name, country_weight.amount]}]), id: "country-weights-chart", width: "800px", height: "500px" %>
+        <%= pie_chart (Hash[@country_weights.map {|country_weight| [country_weight.name, country_weight.amount]}]), id: "country-weights-chart", width: "500px", height: "500px" %>
       </div>
     </div>
   <% end %>
