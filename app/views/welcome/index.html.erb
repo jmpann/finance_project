@@ -1,3 +1,10 @@
-<h1>This is my finance project homepage</h1>
-
-<%= link_to "logout", destroy_user_session_path, method: :delete %>
+<div class="center jumbotron">
+  <div class="home-content">
+    <h1>Welcome to ETF Data Visualizer</h1>
+    <p> Presenting ETF Data pulled3 from State Street Advisors</p>
+     <% if !current_user %>
+      <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-success btn-lg btn-xlarge" %>
+      <%= link_to "Sign In", new_user_session_path, class: "btn btn-success btn-lg btn-xlarge" %>
+    <% end %>
+  </div>
+</div>
