@@ -28,7 +28,7 @@
         </table>
       </div>
       <div class="col-md-6">
-        <%= bar_chart (Hash[@top_holdings.map {|top_holding| [top_holding.name, top_holding.amount]}]), id: "top-holdings-chart",'title': 'Top 10 Holdings', 'height': '368px', chartArea: {left:500,top:0,width:'100%',height:'100%'}%>
+        <%= bar_chart (Hash[@top_holdings.map {|top_holding| [top_holding.name, top_holding.amount]}]), id: "top-holdings-chart", 'height': '368px', library: {vAxis:{title: "Holdings", titleTextStyle:{italic: false}}, hAxis:{title: "Shares", titleTextStyle:{italic: false}}, chartArea: {top:10,width:'70%',height:'80%'}}%>
       </div>
     </div>
   <% end %>
@@ -56,7 +56,7 @@
         </table>
       </div>
       <div class="col-md-6">
-        <%= pie_chart (Hash[@sector_allocations.map {|sector_allocation| [sector_allocation.name, sector_allocation.amount]}]), id: "sector-allocations-chart", width: "500px", height: "500px" %>
+        <%= pie_chart (Hash[@sector_allocations.map {|sector_allocation| [sector_allocation.name, sector_allocation.amount]}]), id: "sector-allocations-chart", 'height': '368px', library: {chartArea: {top:30,width:'100%',height:'100%'}} %>
       </div>
     </div>
   <% end %>
@@ -84,7 +84,7 @@
         </table>
       </div>
       <div class="col-md-6">
-        <%= pie_chart (Hash[@country_weights.map {|country_weight| [country_weight.name, country_weight.amount]}]), id: "country-weights-chart", width: "500px", height: "500px" %>
+        <%= pie_chart (Hash[@country_weights.map {|country_weight| [country_weight.name, country_weight.amount]}]), id: "country-weights-chart", 'height': '368px', library: {chartArea: {top:30,width:'100%',height:'100%'}}%>
       </div>
     </div>
   <% end %>

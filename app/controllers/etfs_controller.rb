@@ -15,9 +15,9 @@ class EtfsController < ApplicationController
 
   def show
     @etf = Etf.find(params[:id])
-    @top_holdings = @etf.top_holdings
-    @country_weights = @etf.country_weights
-    @sector_allocations = @etf.sector_allocations
+    @top_holdings = @etf.top_holdings.order(amount: :desc)
+    @country_weights = @etf.country_weights.order(amount: :desc)
+    @sector_allocations = @etf.sector_allocations.order(amount: :desc)
   end
 
 end
