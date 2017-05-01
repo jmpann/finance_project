@@ -18,4 +18,22 @@ class Etf < ApplicationRecord
     where(ticker: ticker_symbol).first
   end
 
+  def to_csv
+      attributes = %w{name amount}
+
+      CSV.generate(headers: true) do |csv|
+        csv << attributes
+
+        self.top_holdings.each do |top_holding|
+          csv << attributes.map{ |attr| top_holding.send(attr) }
+        end
+        self.sector_allocations.each do |sector_allocation|
+          csv << attributes.map{ |attr| sector_allocation.send(attr) }
+        end
+        self.country_weights.each do |country_weight|
+          csv << attributes.map{ |attr| country_weight.send(attr) }
+        end
+      end
+    end
+
 end
