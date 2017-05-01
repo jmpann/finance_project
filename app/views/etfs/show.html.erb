@@ -8,7 +8,6 @@
   <% if !@top_holdings.empty? %>
     <div class="row" id="top-holdings">
       <h2 align="center">Fund Top 10 Holdings</h2>
-    </br>
       <div class="col-md-6">
         <table class="table table-striped">
           <thead>
@@ -32,11 +31,10 @@
       </div>
     </div>
   <% end %>
-
+</br>
   <% if !@sector_allocations.empty? %>
     <div class="row" id="sector-allocations">
       <h2 align="center">Fund Sector Allocations</h2>
-      </br>
       <div class="col-md-6">
         <table class="table table-striped">
           <thead>
@@ -60,11 +58,11 @@
       </div>
     </div>
   <% end %>
-
-  <% if !@country_weights.empty? %>
+</br>
+</br>
+  <% if (@country_weights.count > 2)  %>
     <div class="row" id="country-weights">
       <h2 align="center">Fund Country Weights</h2>
-      </br>
       <div class="col-md-6">
         <table class="table table-striped">
           <thead>
@@ -89,3 +87,4 @@
     </div>
   <% end %>
 </div>
+</br>
