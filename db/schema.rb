@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170428205404) do
+ActiveRecord::Schema.define(version: 20170501155358) do
 
   create_table "country_weights", force: :cascade do |t|
     t.string  "name"
@@ -25,6 +25,15 @@ ActiveRecord::Schema.define(version: 20170428205404) do
     t.text     "objective"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "searches", force: :cascade do |t|
+    t.string   "ticker"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.string   "status"
+    t.index ["user_id"], name: "index_searches_on_user_id"
   end
 
   create_table "sector_allocations", force: :cascade do |t|

@@ -1,6 +1,6 @@
 <div id="etf-lookup">
     <h3>Search for ETFS by ticker symbol</h3>
-    <%= form_tag search_etfs_path, remote: true, method: :get, id: 'etf-lookup-form' do %>
+    <%= form_tag new_search_path, remote: true, method: :get, id: 'etf-lookup-form' do %>
     <div class="form-group row no-padding text-center col -md-12">
       <div class="col-md-10">
         <%= text_field_tag :etf, params[:etf], placeholder: "ETF ticker symbol EX: SPY", autofocus: true, class: 'form-control search-box input-lg' %>
