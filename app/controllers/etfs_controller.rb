@@ -8,7 +8,7 @@ class EtfsController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.csv { send_data @etf.to_csv, filename: "etf-#{@etf.ticker}-#{Date.today}.csv" }
+      format.csv { send_data @etf.to_csv, filename: "etf-#{@etf.ticker.upcase}-#{Date.today}.csv" }
     end
   end
 
