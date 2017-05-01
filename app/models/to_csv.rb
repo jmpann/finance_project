@@ -1,3 +1,0 @@
-class ToCsv < ApplicationRecord
-  
-end

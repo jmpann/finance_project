@@ -27,9 +27,15 @@ class Etf < ApplicationRecord
         self.top_holdings.each do |top_holding|
           csv << attributes.map{ |attr| top_holding.send(attr) }
         end
+        csv << [" "]
+        csv << ["sector", "weight(%)"]
+
         self.sector_allocations.each do |sector_allocation|
           csv << attributes.map{ |attr| sector_allocation.send(attr) }
         end
+        csv << [" "]
+        csv << ["country", "weight(%)"]
+
         self.country_weights.each do |country_weight|
           csv << attributes.map{ |attr| country_weight.send(attr) }
         end
