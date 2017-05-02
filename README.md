@@ -24,14 +24,14 @@ Here is a shortened example CSV file output:
 
 name,amount  
 Apple Inc.,60640164  
-Microsoft Corporation,89330570
-
-sector,weight(%)
-Information Technology,22.51
-Financials,14.09
-
-country,weight(%)
-United Kingdown, 45.6%
+Microsoft Corporation,89330570  
+  
+sector,weight(%)  
+Information Technology,22.51  
+Financials,14.09  
+  
+country,weight(%)  
+United Kingdown, 45.6%  
 China, 25.45%
 
 
