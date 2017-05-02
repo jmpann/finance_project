@@ -24,15 +24,7 @@ Here is a shortened example CSV file output:
 
 name,amount
 Apple Inc.,60640164
-Microsoft Corporation,89330570
 
-sector,weight(%)
-Information Technology,22.51
-Financials,14.09
-
-country,weight(%)
-United Kingdown, 45.6%
-China, 25.45%
 
 I designed the output this way to make it easier for a user to parse it into a workbook or with a scripting language. The logic is in the to_csv instance method of the Etf class. The Etf#Show action also had to be programmed to allow the .csv file format. Essentially, the download happens by clicking a button which redirects you to /etfs/:id.csv where the file will automatically download. 
 
@@ -52,3 +44,14 @@ I love feedback. Always looking to learn and improve. Feel free to send me an em
 ]]></content>
   <tabTrigger>readme</tabTrigger>
 </snippet>
+
+
+Microsoft Corporation,89330570
+
+sector,weight(%)
+Information Technology,22.51
+Financials,14.09
+
+country,weight(%)
+United Kingdown, 45.6%
+China, 25.45%
