@@ -12,33 +12,33 @@ class Etf < ApplicationRecord
   end
 
   def to_csv
-      attributes = %w{name amount}
+    attributes = %w{name amount}
 
-      CSV.generate(headers: true) do |csv|
-        csv << attributes
+    CSV.generate(headers: true) do |csv|
+      csv << attributes
 
-        self.top_holdings.each do |top_holding|
-          csv << attributes.map{ |attr| top_holding.send(attr) }
+      self.top_holdings.each do |top_holding|
+        csv << attributes.map{ |attr| top_holding.send(attr) }
+      end
+
+      if !sector_allocations.empty?
+        csv << [" "]
+        csv << ["sector", "weight(%)"]
+
+        self.sector_allocations.each do |sector_allocation|
+          csv << attributes.map{ |attr| sector_allocation.send(attr) }
         end
+      end
 
-        if !sector_allocations.empty?
-          csv << [" "]
-          csv << ["sector", "weight(%)"]
+      if !country_weights.empty?
+        csv << [" "]
+        csv << ["country", "weight(%)"]
 
-          self.sector_allocations.each do |sector_allocation|
-            csv << attributes.map{ |attr| sector_allocation.send(attr) }
-          end
-        end
-
-        if !country_weights.empty?
-          csv << [" "]
-          csv << ["country", "weight(%)"]
-
-          self.country_weights.each do |country_weight|
-            csv << attributes.map{ |attr| country_weight.send(attr) }
-          end
+        self.country_weights.each do |country_weight|
+          csv << attributes.map{ |attr| country_weight.send(attr) }
         end
       end
     end
+  end
 
 end
