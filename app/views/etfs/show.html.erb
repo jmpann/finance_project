@@ -1,10 +1,10 @@
 
 
 <div class="container">
-  <a href="<%= @etf.id %>.csv">Download</a>
-  <div class=row id="header">
+  <div class=row id="header" align="center">
     <h1><%= @etf.name %></h1>
     <p><%=@etf.objective %></p>
+    <a href="<%= @etf.id %>.csv" class="btn btn-default">Download Data as CSV</a>
   </div>
   <% if !@top_holdings.empty? %>
     <div class="row" id="top-holdings">

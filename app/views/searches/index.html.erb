@@ -4,23 +4,15 @@
   <table class="table table-striped" id="user-searches">
     <thead>
       <th>Ticker Symbol</th>
-      <th>Status</th>
       <th>Last Searched</th>
     </thead>
     <tbody>
     <% @user_searches.each do |search| %>
-    <tr>
-      <% if search.status == "success" %>
-        <td><a href=""><%=search.ticker%></a></td>
-        <td>Found</td>
+      <tr>
+        <td><a href="../etfs/<%=search.etf_id%>"><%=search.ticker%></a></td>
         <td><%=search.created_at.strftime("Last searched %m/%d/%y") %>
-      <% elsif search.status == "failure"%>
-        <td><%=search.ticker%></td>
-        <td>Not Found</td>
-        <td><%=search.created_at.strftime("Last searched %m/%d/%y") %>
-        <%end%>
-    </tr>
-    <% end %>
-  </tbody>
+      </tr>
+      <%end%>
+    </tbody>
   </table>
 </div>

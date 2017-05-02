@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170501155358) do
+ActiveRecord::Schema.define(version: 20170502031215) do
 
   create_table "country_weights", force: :cascade do |t|
     t.string  "name"
@@ -32,7 +32,8 @@ ActiveRecord::Schema.define(version: 20170501155358) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "user_id"
-    t.string   "status"
+    t.integer  "etf_id"
+    t.index ["etf_id"], name: "index_searches_on_etf_id"
     t.index ["user_id"], name: "index_searches_on_user_id"
   end
 
