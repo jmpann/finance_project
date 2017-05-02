@@ -34,9 +34,7 @@ country,weight(%)
 United Kingdown, 45.6%
 China, 25.45%
 
-I designed the output this way to make it easier for a user to parse it into a workbook or with a scripting language. The logic is in the to_csv instance method of the Etf class. The 
-
-Etf#Show action also had to be programmed to allow the .csv file format. Essentially, the download happens by clicking a button which redirects you to /etfs/:id.csv where the file will automatically download. 
+I designed the output this way to make it easier for a user to parse it into a workbook or with a scripting language. The logic is in the to_csv instance method of the Etf class. The Etf#Show action also had to be programmed to allow the .csv file format. Essentially, the download happens by clicking a button which redirects you to /etfs/:id.csv where the file will automatically download. 
 
 ## Notes on Scraping
 The bulk of the Etf creation happens as class methods of the Scraper class. This is my first time doing web scraping in Ruby. I would appreciate feedback on better ways to organize the scraping related code. It is completely dependent on https://us.spdrs.com/en maintaining the same site organization, layout, and css tags. The ETFs will most likely be created with erroneous information if that site changes. It heavily relies on the ruby Nokogiri library to create an object representing the page. Then it searches for the specific css selectors where the data resides. This generally returns an array of Nokogiri objects representing the relevant fragments of the DOM for Top 10 Holdings, Sector Allocation, and Country Weight. Then the Scraper class iterates over the array of fragments to pull the relevant information to create a corresponding database record with. This lives in the scraper.rb file. 
