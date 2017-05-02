@@ -49,6 +49,7 @@ The bulk of the Etf creation happens as class methods of the Scraper class. This
     @etf
   end
 ```
+For example, this method takes in the user inputed ticker symbol, and a page created by the Nokogiri library. It then parses the page by css selectors for the attributes needed to create an ETF record. Next, it calls another method to create records for the ETF's top holdings, sector weights, and country weights by passing the same page and ETF ID(necessary for these records to be related to the ETF by the foreign key of etf_id). Lastly, it returns an instance of the ETF itself.
 
 ## Contributing
 1. Fork it!
