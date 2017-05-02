@@ -22,9 +22,9 @@ Use the following steps if you want to host it locally instead of use the live s
 ## Notes on CSV file
 Here is a shortened example CSV file output:
 
-name,amount
-Apple Inc.,60640164
-Microsoft Corporation,89330570
+name,amount/n
+Apple Inc.,60640164/n
+Microsoft Corporation,89330570/n
 
 sector,weight(%)
 Information Technology,22.51
